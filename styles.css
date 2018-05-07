@@ -1,0 +1,84 @@
+body {
+	margin: 5% 8%;
+	background-color: #333;
+	color: white;
+	-webkit-transition: margin 1.5s;
+}
+
+h1 {
+	font-size: 40px;
+	margin-bottom: 10%;
+}
+
+#mover {
+	margin: 0 25%;
+	text-align: center;
+}
+
+#mainCtrl {
+	font-size: 24px;
+	text-align: center;
+	-webkit-transition: display 1.5s; /*--- NOT WORKING THO ---*/
+}
+
+#colorSelector {
+	margin-bottom: 5%;
+}
+
+#sideCtrl {
+	text-align: center;
+	display: none;
+	background-color: #333;
+}
+
+/* #sideCtrl div {
+	padding-bottom: 5px;
+} */
+
+.sidebar {
+	/* The sidebar menu */
+		font-size: 12px;
+    width: 130px;
+		height: 140px;
+		position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden;
+		padding-bottom: 5px;
+		-webkit-transition: width 1.5s;
+}
+
+#arrow {
+	cursor: pointer;
+	position: absolute;
+	left: 0;
+	top: 60px;
+	font-size: 20px;
+	background-color: white;
+	color: black;
+	-webkit-transition: position 1.5s, left 1.5s, right 1.5s;
+}
+
+button {
+	margin-bottom: 5%;
+	border-radius: 25%;
+	font-size: 18px;
+}
+
+#main {
+	font-size: 16px;
+	font-family: monospace;
+	text-align: left;
+	line-height: 1.7;
+}
+
+.row {
+	display: flex;
+}
+
+.col {
+	flex: 50%;
+	padding: 15px;
+}

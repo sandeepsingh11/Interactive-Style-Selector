@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<!--
+- FIX 1ST BUTTON'S POSITION [GOT IT]
+- PULL/WITHDRAW SIDEBAR (LIKE MOBLE FEATURE) [GOT IT]
+- CHANGE SIDEBAR'S BGCOLOR ACCORDINGLY [GOT IT]
+- FIX TRANSITION OF ARROW ELEMENT WHEN WITHDRAWING SIDEBAR
+- PAD (VERTICAL?) WHEN IN SIDEBAR MODE
+- EXTRA-> SAME WIDTH FOR SIDEBAR DROPDOWNS
+- EXTRA-> TRANSITION FOR WHEN THE MAIN CTRLS DISAPPEAR
+- BETTER UI
+- QUESTION: DO I REALLY NEED THE BUTTON NOW?
+-->
+
+<html>
+
+<head>
+  <title>Select Style</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body onload="setDefault()">
+  <h1 style="text-align:center">Interactive Style Selector</h1>
+
+  <!-- button to which control placement between main area and sidebar -->
+  <div id="mover">
+  <button onclick="move()">Move to Sidebar</button>
+</div>
+
+  <!-- controls at the main position -->
+  <div id="mainCtrl">
+
+    <div id="colorSelector">- Background Selector -<br>
+      <select class="bgColor" onchange="recolor(this)">
+        <option value="#333">#333</value>
+        <option value="#008080">#008080</value>
+        <option value="#191919">#191919</value>
+        <option value="#003366">#003366</value>
+        <option value="#468499">#468499</value>
+        <option value="#0e2f44">#0e2f44</value>
+      </select>
+    </div>
+
+    <div>- Font Control -<br>
+      <button value="Left-align" onclick="realign(this)">Left-align</button>
+      <button value="Center" onclick="realign(this)">Center</button>
+      <button value="Right-align" onclick="realign(this)">Right-align</button>
+      <button value="Justify" onclick="realign(this)">Justify</button>
+
+      <button value="Small" onclick="resize(this)">Small</button>
+      <button value="Big" onclick="resize(this)">Big</button>
+
+      <button value="Sans-serif" onclick="refont(this)">Sans-serif</button>
+      <button value="Serif" onclick="refont(this)">Serif</button>
+      <button value="Monospace" onclick="refont(this)">Monospace</button>
+    </div>
+
+  </div>
+
+  <!-- controls at the sidebar position -->
+  <div class="sidebar" id="sideCtrl">
+
+    <div id="arrow" onclick="sidebarSlide()">
+    &harr;
+  </div>
+
+    <div>Background<br>
+      <select onchange="recolor(this)">
+      <option value="#333">#333</value>
+      <option value="#008080">#008080</value>
+      <option value="#191919">#191919</value>
+      <option value="#003366">#003366</value>
+      <option value="#468499">#468499</value>
+      <option value="#0e2f44">#0e2f44</value>
+    </select>
+    </div>
+
+    <div>Align<br>
+      <select onchange="realign(this)">
+    <option value="Left-align">Left-align</value>
+    <option value="Center">Center</value>
+    <option value="Right-align">Right-align</value>
+    <option value="Justify">Justify</value>
+  </select>
+    </div>
+
+    <div>Size<br>
+      <select onchange="resize(this)">
+    <option value="Small">Small</value>
+    <option value="Big">Big</value>
+  </select>
+    </div>
+
+    <div>Font<br>
+      <select onchange="refont(this)">
+    <option value="Sans-serif">Sans-serif</value>
+    <option value="Serif">Serif</value>
+    <option value="Monospace">Monospace</value>
+  </select>
+    </div>
+
+  </div>
+
+
+  <div id="main">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non congue lorem. Maecenas bibendum hendrerit orci sit amet pretium. Phasellus sagittis nisi non tempus elementum. Fusce imperdiet lacus quis nisi viverra, non ultrices magna lacinia. In
+      hac habitasse platea dictumst. Duis in mauris iaculis, auctor felis eu, malesuada tortor. Sed non libero quam. Morbi viverra odio sapien, eget euismod neque laoreet sit amet. Cras volutpat viverra nibh, ut tristique risus blandit id. Nullam faucibus
+      semper eros vel suscipit. Cras convallis porttitor tellus, in consequat justo sagittis nec. Cras nibh augue, gravida eu aliquam dignissim, luctus a velit. Nullam leo turpis, hendrerit ac ante non, suscipit venenatis arcu. Aliquam tincidunt erat
+      quam. Donec leo orci, ultrices in fringilla sit amet, cursus id felis. Aliquam finibus nisl a nisi laoreet, quis fermentum augue lobortis.</p>
+
+    <img src="http://via.placeholder.com/350x150">
+    <img src="http://via.placeholder.com/350x150">
+
+    <div class="row">
+      <p class="col">Aliquam tempus a nunc ac accumsan. Cras congue justo nulla. Aenean congue tincidunt magna, eget hendrerit odio. Nunc viverra et neque vel bibendum. Mauris tortor sapien, dictum ac nisl ac, varius tincidunt ante. Cras cursus iaculis mi id ultricies.
+        Cras convallis venenatis felis, molestie euismod urna facilisis ac. Sed sit amet purus sagittis, lacinia felis eu, egestas nibh. Sed sit amet pretium leo. Aliquam id tortor quis nisl bibendum imperdiet. Proin porttitor sapien odio, nec varius
+        nisl convallis nec.
+      </p>
+
+      <p class="col">Nullam mollis ac mauris vel tempor. Donec felis lorem, vehicula nec eros vitae, blandit aliquam magna. Praesent placerat pharetra rutrum. Mauris sollicitudin aliquam neque et posuere. Morbi sed libero interdum, ultricies tellus sed, iaculis ante.
+        Vestibulum aliquet vestibulum leo, vel efficitur erat tempus sit amet. Quisque egestas nibh odio, eget pharetra risus mattis a. Nunc auctor enim sit amet mi pellentesque fermentum. Maecenas fringilla, mauris sit amet iaculis pellentesque, quam
+        eros mattis purus, vel commodo elit sapien a diam. Aenean at neque eu ligula semper pharetra. Proin vehicula lacinia pharetra.
+      </p>
+    </div>
+  </div>
+
+</body>
+
+<script>
+  function setDefault() {
+    var body = document.body;
+    var mainControls = document.getElementById("mainCtrl");
+    var sidebar = document.getElementById("sideCtrl");
+
+    // set body values
+    body.style.marginRight = "8%";
+    body.style.marginLeft = "8%";
+    // set main & side control values
+    mainControls.style.display = "block";
+    sideCtrl.style.width = "0";
+    // set arrow values
+    sidebar.childNodes[1].style.position = "fixed";
+    sidebar.childNodes[1].style.right = "0";
+    sidebar.childNodes[1].style.left = "auto";
+  }
+
+  function move() {
+    var mainControls = document.getElementById("mainCtrl");
+    var sideControls = document.getElementById("sideCtrl");
+    var moverBtn = document.getElementById("mover");
+
+    if (mainControls.style.display == "block") {
+      // sidebar mode
+      mainControls.style.display = "none";
+      sideControls.style.display = "block";
+      moverBtn.childNodes[1] = "Move to Main";
+    } else {
+      // main mode
+      // call func to reset sidebar values
+      setDefault();
+      sideControls.style.display = "none";
+      moverBtn.childNodes[1] = "Move to Sidebar";
+    }
+  }
+
+  function sidebarSlide() {
+    var sidebar = document.getElementById("sideCtrl");
+    var mainContent = document.body;
+
+    if (sidebar.style.width == "130px") {
+      // withdraw sidebar
+      sidebar.style.width = "0";
+      mainContent.style.marginRight = "8%";
+      mainContent.style.marginLeft = "8%";
+      // arrow element
+      sidebar.childNodes[1].style.position = "fixed";
+      sidebar.childNodes[1].style.right = "0";
+      sidebar.childNodes[1].style.left = "auto";
+    }
+    else {
+      // reveal sidebar
+      sidebar.style.width = "130px";
+      mainContent.style.marginRight = "26%";
+      mainContent.style.marginLeft = "1%";
+      // arrow element
+      sidebar.childNodes[1].style.position = "absolute";
+      sidebar.childNodes[1].style.right = "auto";
+      sidebar.childNodes[1].style.left = "0";
+    }
+  }
+
+  function realign(align) {
+    var alignStr = align.value;
+
+    if (alignStr == "Left-align") {
+      document.getElementById("main").style.textAlign = "left";
+    } else if (alignStr == "Center") {
+      document.getElementById("main").style.textAlign = "center";
+    } else if (alignStr == "Right-align") {
+      document.getElementById("main").style.textAlign = "right";
+    } else {
+      document.getElementById("main").style.textAlign = "justify";
+    }
+  }
+
+  function resize(size) {
+    var sizeStr = size.value;
+
+    if (sizeStr == "Small")
+      document.getElementById("main").style.fontSize = "16px";
+    else
+      document.getElementById("main").style.fontSize = "22px";
+  }
+
+  function refont(font) {
+    var fontStr = font.value;
+
+    if (fontStr == "Sans-serif")
+      document.getElementById("main").style.fontFamily = "Comic Sans MS", "cursive", "sans-serif";
+    else if (fontStr == "Serif")
+      document.getElementById("main").style.fontFamily = "Palatino Linotype", "Book Antiqua", "Palatino", "serif";
+    else
+      document.getElementById("main").style.fontFamily = "Lucida Console", "Monaco", "monospace";
+  }
+
+  function recolor(thisColor) {
+    var index = thisColor.selectedIndex;
+    var colorStr = thisColor.options[index].value;
+    var sidebar = document.getElementById("sideCtrl");
+
+    // change body and sidebar BG colors
+    document.body.style.backgroundColor = colorStr;
+    sidebar.style.backgroundColor = colorStr;
+  }
+</script>
+
+</html>
